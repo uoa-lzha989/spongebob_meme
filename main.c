@@ -47,6 +47,7 @@ int main(void) {
 
   char inputString[20];
   int caps = 0;
+  int stringSize;
 
   printf("Type in the sentence you want to mock: \n");
   fgets(inputString, 20, stdin);
@@ -77,7 +78,13 @@ int main(void) {
   }
 
   for (int i = 0; i < sizeof(inputString); i++) {
-    printf("%c \n", inputString[i]); 
+   if (inputString[i] != NULL) {
+     stringSize = i;
+   } 
+  }
+
+  for (int i = 0; i < sizeof(stringSize); i++) {
+    printf("%c \n", inputString[i]);
   }
 
   return 0;
