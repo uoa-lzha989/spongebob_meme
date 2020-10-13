@@ -10,7 +10,7 @@ int main(void) {
 
   for (int i = 0; i < sizeof(inputString); i++) { 
     if (i % 2 == 0) { 
-      strlwr(inputString[i]);
+      inputString[1] = stringLower(inputString[i]);
     } else { 
       strupr(inputString[i]);
     }
@@ -18,4 +18,14 @@ int main(void) {
   printf("%s", inputString);
 
   return 0;
+}
+
+
+
+char stringLower(char s) { 
+  if ((s > 64) && (s < 91)) {
+    return s;
+  } else {
+    return s - 32;
+  }
 }
