@@ -13,34 +13,33 @@ int main(void) {
   fgets(inputString, 1000, stdin);
   sscanf(inputString, "%c", inputString);
 
-  
 
   for (int i = 0; i < sizeof(inputString); i++) { 
     if (caps == 0) { 
+      caps = 1;
       if ((inputString[i] > 64) && (inputString[i] < 91)) {
         inputString[i] = inputString[i] + 32;
         printf("%c", inputString[i]);
-        caps = 1;
       } else if ((inputString[i] > 96) && (inputString[i] < 123)){
         inputString[i] = inputString[i];
         printf("%c", inputString[i]);
-        caps = 1;
       } else {
       inputString[i] = inputString[i];
       printf("%c", inputString[i]);
+      caps = 0;
       }
     } else { 
+      caps = 0;
       if ((inputString[i] > 64) && (inputString[i] < 91)) {
         inputString[i] = inputString[i];
         printf("%c", inputString[i]);
-        caps = 0;
       } else if ((inputString[i] > 96) && (inputString[i] < 123)){
         inputString[i] = inputString[i] - 32;
         printf("%c", inputString[i]);
-        caps = 0;
       } else {
       inputString[i] = inputString[i];
       printf("%c", inputString[i]);
+      caps = 1;
       }
     } 
   }
