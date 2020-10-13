@@ -51,7 +51,9 @@ int main(void) {
 
   printf("Type in the sentence you want to mock: \n");
   fgets(inputString, 1000, stdin);
-  sscanf(inputString, "%s", inputString);
+  sscanf(inputString, "%c", inputString);
+
+  
 
   for (int i = 0; i < sizeof(inputString); i++) { 
     if (caps == 0) { 
